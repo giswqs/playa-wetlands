@@ -5,7 +5,7 @@ import solara
 def Page():
     markdown = """
     ## Solara for Geospatial Applications
-    
+
     ### Introduction
 
     An interactive web app for mapping Playa wetlands.
