@@ -1,4 +1,4 @@
+geopandas
 git+https://github.com/gee-community/geemap.git
 git+https://github.com/opengeos/leafmap.git
 solara
-geopandas
