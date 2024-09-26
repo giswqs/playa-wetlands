@@ -1,5 +1,5 @@
 geopandas
 git+https://github.com/gee-community/geemap.git
 git+https://github.com/opengeos/leafmap.git
-setuptools
+setuptools==69.5.1
 solara
