@@ -1,5 +1,5 @@
+geemap
 geopandas
-git+https://github.com/gee-community/geemap.git
-git+https://github.com/opengeos/leafmap.git
+leafmap
 setuptools<71
 solara
