@@ -1,6 +1,7 @@
 import solara
 import leafmap.maplibregl as leafmap
 import geemap
+import ee
 
 geemap.ee_initialize()
 
@@ -24,12 +25,22 @@ def create_map():
         layer_type="line",
         paint={"line-color": "red", "line-width": 2},
     )
-    m.add_geojson(
-        aquifer_url,
-        name="High Plains Aquifer",
-        layer_type="line",
-        paint={"line-color": "blue", "line-width": 2},
-    )
+    # m.add_geojson(
+    #     aquifer_url,
+    #     name="High Plains Aquifer",
+    #     layer_type="line",
+    #     paint={"line-color": "blue", "line-width": 2},
+    # )
+
+    fc = ee.FeatureCollection("projects/ee-giswqs/assets/Playa/High_Plains")
+
+    style = {
+        "color": "0000ffff",
+        "width": 2,
+        "lineType": "solid",
+        "fillColor": "0000ff00",
+    }
+    m.add_ee_layer(fc.style(**style), {}, "High Plains")
     layer_name = "NWI Wetlands"
     m.add_nwi_basemap(name=layer_name, opacity=0.5)
     m.add_similarity_search(
