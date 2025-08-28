@@ -1,5 +1,4 @@
-geemap
+geemap==0.35.3
 geopandas
-leafmap
-setuptools<71
+leafmap>=0.52.0
 solara
