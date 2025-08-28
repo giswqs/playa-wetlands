@@ -1,12 +1,8 @@
-FROM jupyter/base-notebook:latest
+FROM quay.io/jupyter/base-notebook:latest
 
 RUN mamba install -c conda-forge leafmap geopandas localtileserver -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
-
-USER root
-RUN apt-get update && apt-get install -y git
-RUN pip install -U git+https://github.com/gee-community/geemap.git
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
